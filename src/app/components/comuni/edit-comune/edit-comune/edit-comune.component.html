@@ -1,0 +1,33 @@
+<div class="mt-5 pt-5 popup container-fluid">
+    <div class="card cardBg">
+    <div class="card-body">
+        <div class="container text-center text-white">
+            <form action="">
+                <h2>Modifica comune</h2>
+                <div class="row">
+                    <div class="col-6 my-3">
+                    <input type="text" [(ngModel)]="comune.nome" class="form-control bg-dark border-0 text-white" name="comune.nome" placeholder="nome">
+                </div>
+                <div class="col-6 my-3">
+                    <select name="Nome Provincia" [(ngModel)]="comune.provincia.nome" class="form-control form-select bg-dark border-0 text-white">
+                      <option value="" selected hidden name="NomeProvincia" value="">Nome Provincia</option>
+                      <option *ngFor="let item of province" value="{{item.nome}}">{{ item.nome }}</option>
+                  </select>
+                  </div>
+                  <div class="col my-3">
+                    <select name="Sigla Provincia" [(ngModel)]="comune.provincia.sigla" class="form-control form-select bg-dark border-0 text-white">
+                      <option value="" selected hidden name="NomeProvincia" value="">Sigla Provincia</option>
+                      <option *ngFor="let item of province" value="{{item.sigla}}">{{ item.sigla }}</option>
+                  </select>
+                  </div>
+                <div class="mt-3 col-12">
+                    <button class="btn btn-outline-primary form-control" (click)="editComune(comune)" >
+                        Aggiungi
+                    </button>
+                </div>
+            </div>
+        </form>
+        </div>
+    </div>
+    </div>
+</div>

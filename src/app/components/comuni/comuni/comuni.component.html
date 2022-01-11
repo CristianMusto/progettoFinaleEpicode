@@ -1,0 +1,35 @@
+
+<app-add-comune (onAddComune)="addComune($event)" *ngIf="openComuni"></app-add-comune>
+<app-edit-comune *ngIf="openEdit" [editingComune]="selectedComune" (onEditComune)="closeEdit()"></app-edit-comune> 
+<div class="mt-5 pt-5 container-fluid">
+    <div class="card cardBg text-center text-white">
+      <h1 class="card-title mt-3 text-white">Comuni</h1>
+      <div class="card-body">
+        <table class="table text-white table-borderless table-responsive-lg">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nome</th>
+              <th scope="col">Nome provincia</th>
+              <th scope="col">Sigla provincia</th>
+              <th scope="col"><a href="#" (click)="openAdd($event)">Aggiungi comune <i class="bi bi-plus-circle"></i></a></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of comuni; index as i">
+              <th scope="row">{{i + 1}}</th>
+              <td>{{item.nome}}</td>
+              <td>{{item.provincia.nome}}</td>
+              <td>{{item.provincia.sigla}}</td>
+              <td>
+                  <button class="btn btn-outline-danger mx-1" (click)="deleteComune(item)"><i class="bi bi-trash2-fill"></i></button>
+                  <button class="btn btn-outline-warning mx-1" (click)="selectComune(item)"><i class="bi bi-pencil-square"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+  <app-footer></app-footer>

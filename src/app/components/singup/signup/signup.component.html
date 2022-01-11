@@ -1,0 +1,22 @@
+<div class="mt-5 pt-5">
+    <div class="card container-fluid text-center cardBg text-white" style="width: 50rem">
+      <h5 class="card-title mt-3">Registrati</h5>
+      <div class="card-body row">
+        <div class="col-6 mt-1">
+          <input type="text" class="form-control text-white" placeholder="username" aria-label="username" [(ngModel)]="user.username">
+        </div>
+        <div class="col-6 mt-1">
+          <input type="email" class="form-control text-white" placeholder="email" aria-label="email" [(ngModel)]="user.email">
+        </div>
+        <div class="col-6 mt-2">
+            <input type="password" class="form-control text-white" placeholder="password" aria-label="password" [(ngModel)]="user.password">
+          </div>
+          <div class="col-6 mt-2">
+            <input type="text" class="form-control text-white" placeholder="role" aria-label="role" [(ngModel)]="user.role">
+          </div>
+          <div class="col-12 mt-3">
+            <button class="btn btn-primary form-control text-white" (click)="signup(user)">Registrati</button>
+          </div>
+      </div>
+    </div>
+</div>

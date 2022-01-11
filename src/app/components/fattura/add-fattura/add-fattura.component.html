@@ -1,0 +1,32 @@
+<div class="mt-5 pt-5 popup container-fluid" *ngIf="closeAddFattura">
+  <div class="card cardBg text-white">
+    <div class="card-body">
+      <div class="container-fluid justify-content-around my-3 text-center">
+        <h1>Aggiungi fattura</h1>
+        <div class="row">
+            <div class="col-6 my-3">
+              <input step="1" type="datetime-local" class="form-control bg-dark border-0 text-white" placeholder="data" aria-label="data" [(ngModel)]="fattura.data">
+            </div>
+            <div class="col-6 my-3">
+              <input type="number" class="form-control bg-dark border-0 text-white" placeholder="numero" aria-label="numero" [(ngModel)]="fattura.numero">
+            </div>
+            <div class="col-6 my-3">
+                <input type="number" class="form-control bg-dark border-0 text-white" placeholder="anno" aria-label="anno" [(ngModel)]="fattura.anno">
+              </div>
+              <div class="col-6 my-3">
+                <input type="number" class="form-control bg-dark border-0 text-white" placeholder="importo" aria-label="importo" [(ngModel)]="fattura.importo">
+              </div>
+            <div class="col-12 my-3">
+                <select name="statoFattura" [(ngModel)]="fattura.id" class="form-control form-select bg-dark border-0 text-white">
+                    <option value="stato fattura" selected hidden name="statoFattura" value="">Stato della fattura</option>
+                    <option *ngFor="let item of statiFattura" value="{{item.id}}">{{ item.nome }}</option>
+                </select>
+            </div>
+            <div class="col-12 my-3">
+                <button class="btn btn-outline-primary col-12" (click)="creaFattura(fattura)">Aggiungi fattura</button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

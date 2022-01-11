@@ -1,0 +1,31 @@
+<div class="mt-5 pt-5 popup container-fluid">
+    <div class="card cardBg text-white">
+      <div class="card-body">
+        <div class="container-fluid justify-content-around my-3 text-center">
+          <h1>Modifica fattura</h1>
+          <div class="row">
+              <div class="col-6 my-3">
+                <input type="string" class="form-control bg-dark border-0 text-white" placeholder="data" aria-label="data" [(ngModel)]="fattura.data">
+              </div>
+              <div class="col-6 my-3">
+                <input type="number" class="form-control bg-dark border-0 text-white" placeholder="numero" aria-label="numero" [(ngModel)]="fattura.numero">
+              </div>
+              <div class="col-6 my-3">
+                  <input type="number" class="form-control bg-dark border-0 text-white" placeholder="anno" aria-label="anno" [(ngModel)]="fattura.anno">
+                </div>
+                <div class="col-6 my-3">
+                  <input type="number" class="form-control bg-dark border-0 text-white" placeholder="importo" aria-label="importo" [(ngModel)]="fattura.importo">
+                </div>
+              <div class="col-12 my-3">
+                  <select name="statoFattura" [(ngModel)]="fattura.stato.nome" class="form-control form-select bg-dark border-0 text-white">
+                      <option *ngFor="let item of statoFatture" value="{{item.nome}}" name="statoFattura" selected>{{ item.nome }}</option>
+                  </select>
+              </div>
+              <div class="col-12 my-3">
+                  <button class="btn btn-outline-primary col-12" (click)="editFattura(fattura)">Aggiungi</button>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

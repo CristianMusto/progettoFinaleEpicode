@@ -1,0 +1,32 @@
+<app-add-provincia *ngIf="openAddP" (onAddProvincia)="addProvincia($event)"></app-add-provincia>
+<app-edit-provincia *ngIf="openEdit" [editingProvincia]="selectedProvincia" (onEditProvincia)="closeEdit()"></app-edit-provincia>
+<div class="mt-5 pt-5 container-fluid">
+    <div class="card cardBg text-center text-white">
+        <h1 class="card-title mt-3 text-white">Province</h1>
+      <div class="card-body">
+        <table class="table text-white table-borderless table-responsive-lg">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nome provincia</th>
+              <th scope="col">Sigla provincia</th>
+              <th scope="col"><a href="#" (click)="openAdd($event)">Aggiungi Provincia <i class="bi bi-plus-circle"></i></a></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of provincia; index as i">
+              <th scope="row">{{i + 1}}</th>
+              <td>{{item.nome}}</td>
+              <td>{{item.sigla}}</td>
+              <td>
+                  <button class="btn btn-outline-danger mx-1"><i class="bi bi-trash2-fill" (click)="deleteProvincia(item)"></i></button>
+                  <button class="btn btn-outline-warning mx-1" (click)="selectProvincia(item)"><i class="bi bi-pencil-square"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+  <app-footer></app-footer>

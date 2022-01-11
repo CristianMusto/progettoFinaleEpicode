@@ -1,0 +1,47 @@
+
+
+<app-add-fattura (onAddFattura)="addFattura($event)" *ngIf="openFattura"></app-add-fattura>
+<app-edit-fattura *ngIf="openEdit" [editingFattura]="selectedFattura" (onEditFattura)="closeEdit()"></app-edit-fattura> 
+  <div class="mt-5 pt-5 container-fluid">
+    <div class="card cardBg text-white text-center">
+      <h1 class="card-title mt-3 text-white">Fatture</h1>
+      <div class="card-body">
+        <table class="table container-fluid text-white table-borderless table-responsive-lg">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Data</th>
+              <th scope="col">Numero</th>
+              <th scope="col">Anno</th>
+              <th scope="col">Importo</th>
+              <th scope="col">Stato</th>
+              <th scope="col"><a href="#" (click)="openAdd($event)">Aggiungi fattura <i class="bi bi-plus-circle"></i></a></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let fatt of fatture; index as i">
+              <th scope="row">{{i + 1}}</th>
+              <td>{{fatt.data}}</td>
+              <td>{{fatt.numero}}</td>
+              <td>{{fatt.anno}}</td>
+              <td>{{fatt.importo}}</td>
+              <td>{{fatt.stato.nome}}</td>
+              <td>
+                  <button (click)="deleteFattura(fatt)" class="btn btn-outline-danger mx-1 my-1"><i class="bi bi-trash2-fill"></i></button>
+                  <button class="btn btn-outline-warning mx-1 my-1" (click)="selectFattura(fatt)"><i class="bi bi-pencil-square"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <nav aria-label="..." class="m-2">
+          <ul class="pagination">
+            <li class="page-item" *ngFor="let item of pageNumbers">
+              <a class="page-link bg-transparent border-0" href="fattura/cliente/{{clientId}}/page/{{item}}">{{item+1}}</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+  </div>
+  <app-footer></app-footer>

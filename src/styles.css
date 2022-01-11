@@ -1,1 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+    height: 100%; 
+}
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    background-color: #151516;
+    height: 100vh;
+}
+
+.blob {
+    position: absolute;
+    width: 50%;
+    top: -22%;
+    left: -15%;
+    z-index: -3;
+}
+
+.blob:nth-child(2) {
+    filter: blur(20px)
+}
+
+.blob2 {
+    position: absolute;
+    width: 40%;
+    z-index: -1;
+    top: 15%;
+    left: -10%;
+}
+
+.blob2:nth-child(2) {
+    filter: blur(20px)
+}
+
+.blob3 {
+    position: absolute;
+    width: 30%;
+    z-index: -2;
+    top: 12%;
+    left: 12%;
+}
+
+.blob3:nth-child(2) {
+    filter: blur(20px)
+}
+
+input[placeholder]{
+    color: white;
+}

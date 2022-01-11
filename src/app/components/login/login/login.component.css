@@ -1,0 +1,29 @@
+.cardBg {
+    backdrop-filter: blur(15px);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    border-left: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.5);
+    font-weight: bold;
+}
+
+input {
+    background-color: rgba(17, 16, 16, 0.5) !important;
+    border-style: solid ;
+    border-width: 0.5px;
+    border-image: linear-gradient(45deg,rgb(0, 217, 255,0.5),rgb(98, 0, 255, 0.5)) 1;
+}
+
+button {
+    background-color: transparent;
+    border-style: solid ;
+    border-width: 0.5px;
+    border-image: linear-gradient(45deg,rgb(0, 217, 255),rgb(98, 0, 255)) 1;
+    font-weight: bold;
+    box-shadow: 0px 0px 50px rgba(255, 255, 255, 0.3);
+}
+
+button:hover {
+    background: linear-gradient(45deg,rgb(0, 217, 255),rgb(98, 0, 255)) !important;
+}
+

@@ -1,0 +1,64 @@
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    backdrop-filter: blur(15px);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-style: solid ;
+    border-width: 0.5px;
+    border-image: linear-gradient(45deg,rgb(255, 208, 0),rgb(98, 0, 255)) 1;
+    box-shadow: 0px 0px 50px rgba(255, 255, 255, 0.3);
+    font-weight: bold;
+}
+
+.btnL{
+    background-color: transparent;
+    border-style: solid ;
+    border-width: 0.5px;
+    border-image: linear-gradient(45deg,rgb(0, 217, 255),rgb(98, 0, 255)) 1;
+    font-weight: bold;
+}
+
+.btnL:hover {
+    background: linear-gradient(45deg,rgb(0, 217, 255),rgb(98, 0, 255)) !important;
+}
+
+.btnS {
+  background-color: transparent;
+  border-style: solid ;
+  border-width: 0.5px;
+  border-image: linear-gradient(45deg,rgb(255, 208, 0), rgb(255, 0, 0)) 1;
+  font-weight: bold;
+}
+
+.btnS:hover {
+  background: linear-gradient(45deg,rgb(255, 208, 0), rgb(255, 0, 0)) !important;
+}
+
+.btnLO {
+  background-color: transparent;
+  border-style: solid ;
+  border-width: 0.5px;
+  border-image: linear-gradient(45deg,rgb(255, 0, 0), rgb(132, 0, 255)) 1;
+  font-weight: bold;
+}
+
+.btnLO:hover {
+  background: linear-gradient(45deg,rgb(255, 0, 0), rgb(132, 0, 255)) !important;
+}
+
+#navbarNav ul li a:focus, .navbar-brand:focus {
+  color: dodgerblue !important;
+}
+
+#navbarNav ul li a:hover, .navbar-brand:hover {
+  animation: salto 0.4s linear;
+}
+
+@keyframes salto {
+  0%{transform: translateY(0px)}
+  50%{transform: translateY(-10px)}
+  100%{transform: translateY(0px)}
+}
